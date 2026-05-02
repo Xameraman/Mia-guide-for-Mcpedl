@@ -23,8 +23,6 @@
   --tip: #47C96B;
   --sand: #F5D67A;
   --mia: #5D9E31;
-  --glow-green: rgba(93,158,49,0.4);
-  --glow-gold: rgba(255,215,0,0.4);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -65,10 +63,9 @@ body {
     #9A7050 30px,#9A7050 45px,#7A5530 45px,#7A5530 60px);
 }
 
-/* ── ALL CONTENT above bg ── */
 .site-wrap { position: relative; z-index:2; }
 
-/* ── TOP BAR ── */
+/* ── TOP BAR (unchanged) ── */
 .top-bar {
   background: rgba(6,11,20,0.85);
   backdrop-filter: blur(14px);
@@ -108,8 +105,6 @@ body {
   text-shadow: 0 0 10px rgba(255,215,0,0.5);
 }
 .top-bar-tagline { font-size: 10px; color: #6A9A6A; letter-spacing: 0.5px; }
-
-/* Join button – Discord blue, smaller, left‑aligned */
 .top-bar-join {
   display: inline-flex;
   align-items: center;
@@ -127,24 +122,12 @@ body {
   border: 1px solid rgba(255,255,255,0.15);
   box-shadow: 0 2px 10px rgba(88,101,242,0.35);
 }
-.top-bar-join:hover {
-  background: #4752C4;
-  transform: scale(1.03);
-  box-shadow: 0 4px 16px rgba(88,101,242,0.5);
-}
-.top-bar-join svg {
-  width: 13px; height: 13px;
-}
+.top-bar-join:hover { background: #4752C4; transform: scale(1.03); box-shadow: 0 4px 16px rgba(88,101,242,0.5); }
+.top-bar-join svg { width: 13px; height: 13px; }
 
 @media (max-width: 600px) {
-  .top-bar {
-    padding: 8px 12px;
-    gap: 8px;
-  }
-  .top-bar-join {
-    font-size: 6px;
-    padding: 4px 10px;
-  }
+  .top-bar { padding: 8px 12px; gap: 8px; }
+  .top-bar-join { font-size: 6px; padding: 4px 10px; }
 }
 
 /* ── HERO ── */
@@ -159,11 +142,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-.hero-clouds {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 50%;
-  pointer-events: none;
-}
+.hero-clouds { position: absolute; top: 0; left: 0; right: 0; bottom: 50%; pointer-events: none; }
 .hcloud {
   position: absolute;
   background: rgba(255,255,255,0.85);
@@ -224,7 +203,12 @@ body {
   border: 1px solid rgba(93,158,49,0.2);
   transition: all 0.4s ease;
 }
-.step-panel { display: none; }
+.step-panel {
+  display: none;
+  padding-left: 20px;              /* room for colored border */
+  border-left: 4px solid transparent;
+  transition: border-color 0.3s;
+}
 .step-panel.active { display: block; animation: fadeSlide 0.3s ease; }
 @keyframes fadeSlide {
   from { opacity: 0; transform: translateY(10px); }
@@ -235,15 +219,16 @@ body {
   font-size: 20px; font-weight: 900; color: #fff;
   margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
 }
-.step-title .step-num {
-  background: var(--grass);
+.step-num {
   font-family: 'Press Start 2P', monospace;
   font-size: 8px; padding: 4px 10px; border-radius: 4px;
   color: #fff; letter-spacing: 1px;
   box-shadow: 0 0 14px rgba(93,158,49,0.6);
+  /* background is set per step via JS */
 }
 .step-body { font-size: 15px; line-height: 1.8; color: #C8D8E0; }
 .step-body strong { color: var(--accent); }
+
 .callout {
   display: flex; gap: 10px; align-items: flex-start;
   border-radius: 8px; padding: 12px 16px; margin-top: 14px;
@@ -689,6 +674,18 @@ const steps = [
   }
 ];
 
+// Step colors – one per step, can be customized
+const stepColors = [
+  '#00c6ff', // intro – cyan
+  '#a78bfa', // step1 – purple
+  '#f59e0b', // step2 – amber
+  '#34d399', // step3 – emerald
+  '#f87171', // step4 – red
+  '#60a5fa', // step5 – blue
+  '#f472b6', // step6 – pink
+  '#00ff88'  // summary – green
+];
+
 const totalSteps = steps.length;
 let currentStep = 0;
 const container = document.getElementById('stepContainer');
@@ -703,9 +700,12 @@ function renderSteps() {
   steps.forEach((step, index) => {
     const panel = document.createElement('div');
     panel.className = 'step-panel';
+    // Set the left border and step number color dynamically
+    const color = stepColors[index % stepColors.length];
+    panel.style.borderLeftColor = color;
     panel.innerHTML = `
       <div class="step-title">
-        <span class="step-num">${index === 0 ? 'INTRO' : `STEP ${index}`}</span>
+        <span class="step-num" style="background:${color}; box-shadow: 0 0 14px ${color};">${index === 0 ? 'INTRO' : `STEP ${index}`}</span>
         ${step.title}
       </div>
       <div class="step-body">${step.body}</div>
