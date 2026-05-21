@@ -49,48 +49,6 @@ body {
 
 .site-wrap { position:relative; z-index:2; }
 
-/* ── TOP BAR ── */
-.top-bar {
-  background:rgba(8,14,26,0.88); backdrop-filter:blur(14px);
-  border-bottom:2px solid rgba(93,158,49,0.4);
-  padding:8px 20px; display:flex; align-items:center;
-  justify-content:space-between; gap:14px; flex-wrap:wrap;
-  position:sticky; top:0; z-index:100;
-  box-shadow:0 2px 24px rgba(93,158,49,0.12);
-}
-.top-bar-left{display:flex;align-items:center;gap:10px;}
-.top-bar-logo {
-  width:36px; height:36px; flex-shrink:0;
-  border-radius:8px; object-fit:cover;
-  border:2px solid rgba(93,158,49,0.5);
-  box-shadow:0 0 12px rgba(93,158,49,0.4);
-}
-.top-bar-info { display:flex; flex-direction:column; margin-right:6px; }
-.top-bar-name {
-  font-family:'Press Start 2P',monospace; font-size:7px;
-  color:var(--accent); letter-spacing:1.5px; line-height:1.7;
-  text-shadow:0 0 10px rgba(255,215,0,0.4);
-}
-.top-bar-tagline { font-size:10px; color:#6A9A6A; letter-spacing:0.5px; }
-.top-bar-join {
-  display:inline-flex; align-items:center; gap:6px;
-  background:linear-gradient(135deg,#5865F2,#4752C4);
-  color:#fff; font-family:'Press Start 2P',monospace;
-  font-size:7px; padding:7px 14px; border-radius:6px;
-  text-decoration:none; letter-spacing:0.5px;
-  border:1.5px solid rgba(140,150,255,0.4);
-  transition:transform .2s,box-shadow .2s;
-  box-shadow:0 2px 10px rgba(88,101,242,0.35);
-  white-space:nowrap;
-}
-.top-bar-join:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 4px 16px rgba(88,101,242,0.5);}
-.top-bar-join svg{width:14px;height:14px;flex-shrink:0;fill:#fff;}
-
-@media (max-width:600px){
-  .top-bar{padding:8px 12px;gap:8px;}
-  .top-bar-join{font-size:6px;padding:5px 10px;}
-}
-
 /* ── HERO ── */
 .hero {
   background:linear-gradient(180deg,
@@ -168,17 +126,6 @@ body {
 .callout.warn{background:rgba(255,107,53,0.08);border:1px solid #FF6B35;color:#FFB898;}
 .callout.info{background:rgba(58,143,199,0.08);border:1px solid #3A8FC7;color:#A8D8F8;}
 .callout-icon { font-size:16px; flex-shrink:0; margin-top:1px; }
-
-.callout.mia-callout {
-  background:linear-gradient(135deg, rgba(155,79,219,0.1), rgba(255,105,180,0.08));
-  border:1px solid rgba(198,120,255,0.4);
-  color:#F0C8F0; margin-top:16px;
-  box-shadow:0 0 14px rgba(198,120,255,0.12);
-  padding:10px 14px; font-size:13px; line-height:1.65;
-}
-.callout.mia-callout .callout-icon img {
-  width:18px; height:18px; border-radius:3px; vertical-align:middle;
-}
 
 .version-demo {
   background:#0A0F18; border:1px solid #333;
@@ -383,23 +330,6 @@ body {
 
 <div class="site-wrap">
 
-<!-- TOP BAR -->
-<div class="top-bar">
-  <div class="top-bar-left">
-    <img src="mia-icon.png" alt="MIA" class="top-bar-logo">
-    <div class="top-bar-info">
-      <span class="top-bar-name">Minecraft Items Accelerated [MIA]</span>
-      <span class="top-bar-tagline">Your shortcut to the best Bedrock add‑ons</span>
-    </div>
-  </div>
-  <a href="https://discord.gg/tS5WmGEyxN" class="top-bar-join" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="none" preserveAspectRatio="xMidYMid meet">
-      <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.1.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" fill="#fff"/>
-    </svg>
-    Join Now!
-  </a>
-</div>
-
 <!-- HERO -->
 <div class="hero">
   <div class="hero-clouds">
@@ -521,7 +451,7 @@ body {
   draw();
 })();
 
-/* ─── Wizard steps ─── */
+/* ─── Wizard steps (NO miaTip) ─── */
 const steps = [
   {
     title: "👋 Welcome to the MCPEDL Download Guide",
@@ -529,31 +459,27 @@ const steps = [
       <p>This interactive guide will walk you through downloading add‑ons, maps, texture packs, and more from <strong>MCPEDL</strong> — the largest Bedrock content site.</p>
       <p style="margin-top:12px;">It's designed for beginners, so each step is clear and visual. Use the <strong>Next</strong> and <strong>Previous</strong> buttons to move through the steps.</p>
       <div class="callout info"><span class="callout-icon">ℹ️</span><span>If you already know MCPEDL basics, you can skip ahead — the steps are independent.</span></div>
-    `,
-    miaTip: "🌿 <strong>MIA Helps:</strong> Every pack shared in MIA comes with a direct link to its MCPEDL page — so you can skip searching and jump straight to Step 2."
+    `
   },
   {
     title: "🔍 Step 1: Find Your Pack",
     body: `
       <p>Head over to <strong>mcpedl.com</strong> and use the search bar or browse categories to find the add‑on, map, skin pack, or texture pack you want to download.</p>
       <div class="callout tip"><span class="callout-icon">💡</span><span>Use specific keywords (e.g. "PVP texture pack 1.21") to narrow results quickly.</span></div>
-    `,
-    miaTip: "🌿 <strong>MIA Helps:</strong> Not sure where to look? MIA channels are organized by category — just pick a channel and you'll find curated packs with links ready to go."
+    `
   },
   {
     title: "📄 Step 2: Open the Content Page",
     body: `
       <p>Once you find what you're looking for, click its title or thumbnail to open the full content page. This is where download links, screenshots, and the description live.</p>
-    `,
-    miaTip: "🌿 <strong>MIA Helps:</strong> MIA posts include a link that takes you directly to the content page — no need to search or browse again."
+    `
   },
   {
     title: "⏩ Step 3: Press “Skip to Download”",
     body: `
       <p>At the very top of the page, look for a <strong>"Skip to Download"</strong> button or link. Tapping it jumps you straight to the download section — saving a lot of scrolling.</p>
       <div class="callout tip"><span class="callout-icon">💡</span><span>No "Skip to Download"? Just scroll all the way to the bottom manually — the download links are always there.</span></div>
-    `,
-    miaTip: "🌿 <strong>MIA Helps:</strong> Many MIA links go straight to the download section (or even direct file), so you can skip this step entirely."
+    `
   },
   {
     title: "🗂️ Step 4: Pick the Right Version",
@@ -567,8 +493,7 @@ const steps = [
         </div>
       </div>
       <div class="callout info" style="margin-top:12px;"><span class="callout-icon">ℹ️</span><span>Not sure what version you're on? Open Minecraft → <strong>Settings → About</strong>, and your game version is shown there.</span></div>
-    `,
-    miaTip: "🌿 <strong>MIA Helps:</strong> MIA descriptions always specify the supported Minecraft versions — so you don't have to guess which one to pick."
+    `
   },
   {
     title: "⬇️ Step 5: Tap the Download Button",
@@ -576,8 +501,7 @@ const steps = [
       <p>Tap the download button for the version you chose. It may lead to a direct <strong>.mcpack</strong> / <strong>.mcaddon</strong> file, or an external page (depending on the creator).</p>
       <div class="callout tip"><span class="callout-icon">💡</span><span>On MCPEDL, the real download link is usually small green text below the changelog or description — not the flashy banner ads.</span></div>
       <div class="callout warn"><span class="callout-icon">⚠️</span><span>Be careful of large "DOWNLOAD" banner ads — they are advertisements, not the actual file. Always look for the small green download text inside the content area.</span></div>
-    `,
-    miaTip: "🌿 <strong>MIA Helps:</strong> MIA shares only direct download links — no Linkvertise, no ad‑walls. Every link is manually checked before posting."
+    `
   },
   {
     title: "🎮 Step 6: Open & Import into Minecraft",
@@ -589,8 +513,7 @@ const steps = [
       <p>On PC, simply double‑click the file to import it 💻</p>
       <p>Minecraft will display <strong>"Import Started"</strong> followed by <strong>"Successfully Imported"</strong> when completed ✅</p>
       <div class="callout tip"><span class="callout-icon">✅</span><span><strong>Important:</strong> For .mcaddon files, both a Resource Pack and Behavior Pack may be included. Enable both in your world settings before playing.</span></div>
-    `,
-    miaTip: "🌿 <strong>MIA Helps:</strong> Need extra help? Join the MIA Discord — our community can help troubleshoot installation issues in real time."
+    `
   },
   {
     title: "✅ Summary & Quick Reference",
@@ -604,8 +527,7 @@ const steps = [
         <li>Open the file with <strong>Minecraft</strong> — it imports automatically</li>
       </ul>
       <div class="callout info" style="margin-top:12px;"><span class="callout-icon">🌿</span><span>All MIA links are pre‑checked and direct — so you skip the fake download buttons entirely.</span></div>
-    `,
-    miaTip: "🌿 <strong>MIA Helps:</strong> MIA is built to remove the friction from downloading Bedrock content. Fast, direct, organized — with proper credits always given. Join us and level up your Minecraft experience!"
+    `
   }
 ];
 
@@ -636,10 +558,6 @@ function renderSteps() {
         ${step.title}
       </div>
       <div class="step-body">${step.body}</div>
-      <div class="callout mia-callout">
-        <span class="callout-icon"><img src="mia-icon.png" alt="MIA" style="width:18px;height:18px;border-radius:3px;"></span>
-        <span>${step.miaTip}</span>
-      </div>
     `;
     container.appendChild(panel);
   });
@@ -795,7 +713,6 @@ updateUI();
   const sendBtn = document.getElementById('mia-send');
   const footer  = document.getElementById('mia-footer-note');
 
-  // ── Show/hide captcha vs input ──
   function updateCaptchaState() {
     const captchaWrap = document.getElementById('mia-captcha-wrap');
     const inputRow    = document.getElementById('mia-input-row');
@@ -809,31 +726,22 @@ updateUI();
     }
   }
 
-  // ── Global slow mode banner ──
   let slowBanner = null;
   function showSlowBanner(seconds) {
     if (slowBanner) return;
     slowBanner = document.createElement('div');
-    slowBanner.style.cssText = `
-      background:rgba(251,191,36,0.12);border-bottom:1px solid rgba(251,191,36,0.3);
-      color:#fbbf24;font-size:11px;font-weight:700;text-align:center;
-      padding:6px 10px;flex-shrink:0;
-    `;
+    slowBanner.style.cssText = 'background:rgba(251,191,36,0.12);border-bottom:1px solid rgba(251,191,36,0.3);color:#fbbf24;font-size:11px;font-weight:700;text-align:center;padding:6px 10px;flex-shrink:0;';
     slowBanner.textContent = `🛡️ High load detected — slow mode active (${seconds}s)`;
     panel.insertBefore(slowBanner, msgs);
   }
-  function hideSlowBanner() {
-    if (slowBanner) { slowBanner.remove(); slowBanner = null; }
-  }
+  function hideSlowBanner() { if (slowBanner) { slowBanner.remove(); slowBanner = null; } }
 
-  // ── New Chat button ──
   const header = document.getElementById('mia-panel-header');
   if (header) {
     const newChatBtn = document.createElement('button');
     newChatBtn.title = 'New conversation';
     newChatBtn.textContent = '🔄';
-    newChatBtn.style.cssText = `background:none;border:none;cursor:pointer;font-size:16px;
-      opacity:0.45;transition:opacity .2s;padding:2px 4px;margin-left:auto;flex-shrink:0;`;
+    newChatBtn.style.cssText = 'background:none;border:none;cursor:pointer;font-size:16px;opacity:0.45;transition:opacity .2s;padding:2px 4px;margin-left:auto;flex-shrink:0;';
     newChatBtn.onmouseover = ()=>newChatBtn.style.opacity='1';
     newChatBtn.onmouseout  = ()=>newChatBtn.style.opacity='0.45';
     newChatBtn.addEventListener('click', resetChat);
@@ -841,16 +749,11 @@ updateUI();
     if(dot) header.insertBefore(newChatBtn,dot); else header.appendChild(newChatBtn);
   }
 
-  // ── Countdown ──
   function startCountdown(seconds) {
     clearInterval(countdownInt);
     let rem = seconds;
     function tick() {
-      if(rem<=0){
-        clearInterval(countdownInt);
-        checkStatusOnLoad();
-        return;
-      }
+      if(rem<=0){ clearInterval(countdownInt); checkStatusOnLoad(); return; }
       const m=Math.floor(rem/60), s=rem%60;
       if(footer) footer.textContent = m>0 ? `⏳ Locked ${m}m ${s}s` : `⏳ Locked ${s}s`;
       rem--;
@@ -887,7 +790,6 @@ updateUI();
     if(footer) footer.textContent='MIA AI • Powered by MIA Official';
     msgs.innerHTML='';
     addMessage('bot','🔄 Chat cleared! Hey! 👋 I\'m <strong>MIA Assistant</strong>. Ask me anything — I\'m here to help!');
-    // Reset captcha on new chat
     captchaVerified = false;
     captchaToken    = null;
     sessionStorage.removeItem('mia_captcha');
@@ -895,30 +797,20 @@ updateUI();
     if(window.turnstile) window.turnstile.reset();
   }
 
-  // ── Check server status on load ──
   async function checkStatusOnLoad() {
     try {
       const res = await fetch(STATUS_URL, {headers: HEADERS});
       if(!res.ok) return;
       const data = await res.json();
-
-      if(data.slow_mode && data.slow_until>0) {
-        showSlowBanner(data.slow_until);
-      } else {
-        hideSlowBanner();
-      }
-
+      if(data.slow_mode && data.slow_until>0) showSlowBanner(data.slow_until);
+      else hideSlowBanner();
       if(data.locked && data.unlock_in>0) {
         chatLocked=true; input.disabled=true; sendBtn.disabled=true;
         input.placeholder='⛔ Locked. Wait for timer.';
         startCountdown(data.unlock_in);
-        if(isOpen) {
-          addMessage('bot',`⛔ You are still locked — ${data.unlock_in}s remaining. Refreshing won't bypass this.`);
-        }
-      } else if(chatLocked && !data.locked) {
-        unlockChat();
-      }
-    } catch(e) { /* silent */ }
+        if(isOpen) addMessage('bot',`⛔ You are still locked — ${data.unlock_in}s remaining. Refreshing won't bypass this.`);
+      } else if(chatLocked && !data.locked) unlockChat();
+    } catch(e) {}
   }
 
   updateCaptchaState();
@@ -946,84 +838,30 @@ updateUI();
     if(!captchaVerified){ updateCaptchaState(); return; }
     const text=input.value.trim();
     if(!text||isLoading) return;
-
-    if(text.length>600){
-      lockChat('⛔ <strong>Chat locked</strong> — message too long. Keep under 600 chars. 🔄',15);
-      return;
-    }
-    if(isBadMessage(text)){
-      lockChat('⛔ <strong>Chat locked</strong> — swearing, NSFW, and rude behavior are not allowed. 🔄',15);
-      return;
-    }
+    if(text.length>600){ lockChat('⛔ <strong>Chat locked</strong> — message too long. Keep under 600 chars. 🔄',15); return; }
+    if(isBadMessage(text)){ lockChat('⛔ <strong>Chat locked</strong> — swearing, NSFW, and rude behavior are not allowed. 🔄',15); return; }
     const rep=checkRepetitive(text);
-    if(rep.warn){
-      addMessage('bot','💡 Please ask a proper question! Very short messages may be limited. 😊');
-      input.value=''; input.style.height='auto'; return;
-    }
-    if(rep.lock){
-      lockChat(
-        rep.reason==='short'
-          ? '⛔ <strong>Chat locked</strong> — please type real questions. 🔄'
-          : '⛔ <strong>Chat locked</strong> — stop repeating the same message. 🔄',
-        15
-      );
-      return;
-    }
+    if(rep.warn){ addMessage('bot','💡 Please ask a proper question! Very short messages may be limited. 😊'); input.value=''; input.style.height='auto'; return; }
+    if(rep.lock){ lockChat(rep.reason==='short' ? '⛔ <strong>Chat locked</strong> — please type real questions. 🔄' : '⛔ <strong>Chat locked</strong> — stop repeating the same message. 🔄',15); return; }
 
     addMessage('user',text);
     history.push({role:'user',content:text});
     input.value=''; input.style.height='auto';
-
     const typing=addTyping();
     setLoading(true);
 
     try {
-      const res = await fetch(API_URL,{
-        method:'POST', headers:HEADERS,
-        body:JSON.stringify({
-          message:       text,
-          history:       history.slice(0,-1),
-          source:        SOURCE,
-          captcha_token: captchaToken || ''
-        })
-      });
+      const res = await fetch(API_URL,{ method:'POST', headers:HEADERS, body:JSON.stringify({ message:text, history:history.slice(0,-1), source:SOURCE, captcha_token: captchaToken || '' }) });
       if(!res.ok) throw new Error(`HTTP ${res.status}`);
       const data=await res.json();
-
-      // Server-side captcha rejection
-      if(data.captcha){
-        typing.remove();
-        captchaVerified = false;
-        captchaToken    = null;
-        sessionStorage.removeItem('mia_captcha');
-        updateCaptchaState();
-        if(window.turnstile) window.turnstile.reset();
-        addMessage('bot','⛔ Human verification failed. Please verify again.');
-        setLoading(false); return;
-      }
-
-      if(data.locked){
-        typing.remove();
-        lockChat(data.response||'⛔ You have been locked. Please wait.',data.unlock_in||15);
-        setLoading(false); return;
-      }
-      if(data.slow_mode){
-        typing.remove();
-        showSlowBanner(data.unlock_in||60);
-        addMessage('bot',data.response||'🛡️ MIA is under high load. Please wait.');
-        setLoading(false); return;
-      }
-      if(data.spam){
-        typing.remove();
-        lockChat(data.response||'⛔ Chat locked. Refresh to unlock.',0);
-        setLoading(false); return;
-      }
-
+      if(data.captcha){ typing.remove(); captchaVerified = false; captchaToken = null; sessionStorage.removeItem('mia_captcha'); updateCaptchaState(); if(window.turnstile) window.turnstile.reset(); addMessage('bot','⛔ Human verification failed. Please verify again.'); setLoading(false); return; }
+      if(data.locked){ typing.remove(); lockChat(data.response||'⛔ You have been locked. Please wait.',data.unlock_in||15); setLoading(false); return; }
+      if(data.slow_mode){ typing.remove(); showSlowBanner(data.unlock_in||60); addMessage('bot',data.response||'🛡️ MIA is under high load. Please wait.'); setLoading(false); return; }
+      if(data.spam){ typing.remove(); lockChat(data.response||'⛔ Chat locked. Refresh to unlock.',0); setLoading(false); return; }
       const reply=data.response||'Sorry, no response. Please try again.';
       history.push({role:'assistant',content:reply});
       typing.remove();
       addMessage('bot',reply);
-
     } catch(err){
       typing.remove();
       addMessage('bot','⚠️ Something went wrong. Please try again in a moment.');
@@ -1036,12 +874,7 @@ updateUI();
   function addMessage(role,text){
     const div=document.createElement('div');
     div.className=`mia-msg ${role}`;
-    div.innerHTML=text
-      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-      .replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
-      .replace(/\*(.*?)\*/g,'<em>$1</em>')
-      .replace(/`(.*?)`/g,'<code>$1</code>')
-      .replace(/\n/g,'<br>');
+    div.innerHTML=text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\*(.*?)\*/g,'<em>$1</em>').replace(/`(.*?)`/g,'<code>$1</code>').replace(/\n/g,'<br>');
     msgs.appendChild(div);
     scrollToBottom();
     return div;
@@ -1058,6 +891,30 @@ updateUI();
 
   function scrollToBottom(){msgs.scrollTop=msgs.scrollHeight;}
   function setLoading(s){isLoading=s;input.disabled=s;sendBtn.disabled=s;}
+})();
+</script>
+<!-- Discord Live Widget (icon + left-of-center) -->
+<script>
+(async function() {
+  try {
+    const res = await fetch('https://discord.com/api/guilds/1402293305785581721/widget.json');
+    if (!res.ok) return;
+    const data = await res.json();
+    const count = data.presence_count;
+    const badge = document.createElement('a');
+    badge.href = 'https://discord.gg/tS5WmGEyxN';
+    badge.target = '_blank';
+    badge.rel = 'noopener';
+    badge.style.cssText = 'position:fixed;bottom:18px;left:50%;z-index:99998;background:linear-gradient(135deg,#5865F2,#4752C4);color:#fff;padding:6px 12px;border-radius:20px;font-size:11px;font-family:"Nunito",sans-serif;font-weight:700;box-shadow:0 3px 10px rgba(88,101,242,0.45);text-decoration:none;display:flex;align-items:center;gap:6px;transition:transform .2s,box-shadow .2s;cursor:pointer;transform:translateX(-60%);white-space:nowrap;';
+    const icon = document.createElement('img');
+    icon.src = 'mia-icon.png';
+    icon.style.cssText = 'width:18px;height:18px;border-radius:4px;object-fit:cover;flex-shrink:0;box-shadow:0 0 4px rgba(255,255,255,0.3);';
+    badge.appendChild(icon);
+    badge.appendChild(document.createTextNode(`🟢 ${count} online · Press to join MIA`));
+    badge.onmouseover = ()=> { badge.style.transform = 'translateX(-60%) scale(1.05)'; badge.style.boxShadow = '0 5px 16px rgba(88,101,242,0.7)'; };
+    badge.onmouseout  = ()=> { badge.style.transform = 'translateX(-60%) scale(1)'; badge.style.boxShadow = '0 3px 10px rgba(88,101,242,0.45)'; };
+    document.body.appendChild(badge);
+  } catch(e) {}
 })();
 </script>
 </body>
